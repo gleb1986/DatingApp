@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DatingApp.API.Dtos;
 using DatingApp.API.Models;
-using DatingApp.API.Models.Data;
+using DatingApp.API.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;

@@ -6,10 +6,10 @@ import * as alertify from 'alertifyjs';
 export class AlertifyService {
   constructor() {}
 
-  confirm(message: string, okCallBack: () => any) {
+  confirm(message: string, onCallBack: () => any) {
     alertify.this.confirm(message, (e: any) => {
       if (e) {
-        okCallBack();
+        onCallBack();
       } else {
       }
     });

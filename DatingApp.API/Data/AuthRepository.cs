@@ -1,9 +1,10 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using DatingApp.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DatingApp.API.Models.Data
+namespace DatingApp.API.Data
 {
     public class AuthRepository : IAuthRepository
     {
@@ -39,7 +40,7 @@ namespace DatingApp.API.Models.Data
             return true;
         }
 
-        private void CreatePassword(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using(var hmac = new System.Security.Cryptography.HMACSHA512())
             {
@@ -52,7 +53,7 @@ namespace DatingApp.API.Models.Data
         {
             byte[] passwordHash, passwordSalt;
 
-            CreatePassword(password, out passwordHash, out passwordSalt);
+            CreatePasswordHash(password, out passwordHash, out passwordSalt);
             user.PasswordSalt = passwordSalt;
             user.PasswordHash = passwordHash;
 
