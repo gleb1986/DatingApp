@@ -9,7 +9,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {TimeAgoPipe} from 'time-ago-pipe';
 
-import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule, PaginationModule, ButtonsModule } from 'ngx-bootstrap';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
 import { NavComponent } from './nav/nav.component';
@@ -64,6 +64,8 @@ export class CustomHammerConfig extends HammerGestureConfig  {
       FormsModule,
       ReactiveFormsModule,
       BrowserAnimationsModule,
+      ButtonsModule.forRoot(),
+      PaginationModule.forRoot(),
       BsDatepickerModule.forRoot(),
       BsDropdownModule.forRoot(),
       TabsModule.forRoot(),
